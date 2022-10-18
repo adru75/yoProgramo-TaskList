@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Task} from '../Task'
-import {TASKS} from '../mock-tasks'
+import {Task} from 'src/app/components/Task'
+import {TASKS} from 'src/app/components/mock-tasks'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -10,12 +10,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./tasks-item.component.css']
 })
 export class TasksItemComponent implements OnInit {
-
-  faTimes = faTimes;
   @Input() task: Task = TASKS[0]
+  faTimes = faTimes;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+    onDelete(task: Task) {
+      console.log(task);
+    }
 }
